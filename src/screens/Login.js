@@ -25,7 +25,7 @@ function Login() {
         mode: "onChange"
     });
     const onSubmitValid = (data) => {
-        // console.log(data);
+        console.log(data);
     };
     return (
         <AuthLayout>
