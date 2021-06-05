@@ -39,7 +39,7 @@ const LOGIN_MUTATION = gql`
 
 function Login() {
     const location = useLocation();
-    console.log(location);
+    // console.log(location);
     const { register, handleSubmit, errors, formState, getValues, setError, clearErrors } = useForm({
         mode: "onChange",
         defaultValues: { username: location?.state?.username || "",
@@ -59,7 +59,7 @@ function Login() {
         onCompleted
     });
     const onSubmitValid = (data) => {
-        console.log(data);
+        // console.log(data);
         if (loading) {
             return;
         }
