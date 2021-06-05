@@ -5,7 +5,7 @@ import PageTitle from "../components/PageTitle";
 
 const FEED_QUERY = gql`
   query seeFeed {
-    seeFeed {
+    seeFeed(offset: 0) {
       id
       user {
         username
@@ -14,18 +14,23 @@ const FEED_QUERY = gql`
       file
       caption
       likes
-      comments{
-          payload
+      comments {
+        id
+        user {
+          username
+          avatar
+        }
+        payload
+        isMine
+        createdAt
       }
+      commentNumber
       createdAt
       isMine
       isLiked
     }
   }
 `;
-
-
-
 
 function Home() {
     const { data } = useQuery(FEED_QUERY);
