@@ -54,15 +54,18 @@ function Comment ({ id, photoId, isMine, author, payload }) {
         <CommentContainer>
             <FatText>{author}</FatText>
             <CommentCaption>
-                {payload.split(" ").map((word, index) => 
-                    /[\w]+/.test(word) ? (
-                        <React.Fragment key={index}>
-                            <Link to={`/hashtags/${word}`}>#{word}</Link>{" "}
-                        </React.Fragment>
-                    ) : (
-                        <React.Fragment key={index}>#{word}</React.Fragment>
-                    )
-                )}
+                {payload}
+                <div>
+                    {payload.split(" ").map((word, index) => 
+                        /[\w]+/.test(word) ? (
+                            <React.Fragment key={index}>
+                                <Link to={`/hashtags/${word}`}>#{word}</Link>{" "}
+                            </React.Fragment>
+                        ) : (
+                            <React.Fragment key={index}>#{word}</React.Fragment>
+                        )
+                    )}
+                </div>
             </CommentCaption>
             {isMine ? <button onClick={onDeleteClick}>X</button> : null}
         </CommentContainer>
