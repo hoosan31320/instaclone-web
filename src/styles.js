@@ -18,7 +18,7 @@ export const GlobalStyles = createGlobalStyle`
     input { all: unset; }
     * { box-sizing: border-box; }
     body {
-        background-color: ${(props) => props.theme.bgColor};
+        background-color: red;
         font-size: 14px;
         font-family: 'Open Sans', sans-serif;
         color: ${(props) => props.theme.fontColor};
