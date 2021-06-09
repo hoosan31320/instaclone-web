@@ -5,7 +5,6 @@ export const PHOTO_FRAGMENT = gql`
         id
         file
         caption
-        likes
         commentNumber
         isLiked
         likes
