@@ -27,6 +27,7 @@ function Home() {
     const { data } = useQuery(FEED_QUERY, {
       variables: { offset: 0 }
     });
+    console.log(data, "Feed-frontWeb");
     return (
         <div>
             <PageTitle title="Home" />
