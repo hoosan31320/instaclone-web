@@ -34,7 +34,10 @@ export const disableDarkMode = () => {
 }
 
 const httpLink = createHttpLink({
-    uri: "http://54.219.16.9:4000/graphql"
+    uri: 
+        process.env.NODE_ENV === "production"
+            ? "http://54.219.16.9:4000/graphql"
+            : "http://localhost:4000/graphql"
 })
 
 const authLink = setContext((_, { headers }) =>{
