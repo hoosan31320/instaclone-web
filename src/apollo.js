@@ -37,7 +37,7 @@ const httpLink = createHttpLink({
     uri: 
         process.env.NODE_ENV === "production"
             ? "https://instaclone-b.herokuapp.com/graphql"
-            : "http://localhost:4000/graphql"
+            : "https://instaclone-b.herokuapp.com/graphql"
 })
 
 const authLink = setContext((_, { headers }) =>{
