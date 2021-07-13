@@ -7,3 +7,4 @@
 - [ ] Styles
 - [ ] Log In / Sign Up
 
+## Comment.js에서 caption이 없는 사진 있을때 60번째 줄에서 에러 발생.

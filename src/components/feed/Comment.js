@@ -57,6 +57,15 @@ function Comment ({ id, photoId, isMine, author, payload }) {
             </Link>
             <CommentCaption>
                 {payload + " "}
+                {payload.split(" ").map((word, index) => // caption이 없는 사진 있으면 에러남.
+                    /[\w]+/.test(word) ? (
+                        <React.Fragment key={index}>
+                            <Link to={`/hashtags/${word}`}>#{word}</Link>{" "}
+                        </React.Fragment>
+                    ) : (
+                        <React.Fragment key={index}>#{word}</React.Fragment>
+                    )
+                )}
             </CommentCaption>
             {isMine ? <button onClick={onDeleteClick}>X</button> : null}
         </CommentContainer>
